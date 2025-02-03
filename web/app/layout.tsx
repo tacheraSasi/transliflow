@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "Transliflow",
   description:
     "AI-powered collaborative translation platform. Seamlessly manage translations, automate workflows, and enhance productivity with real-time collaboration and intelligent suggestions. Built with Go, Next.js, and TypeScript for speed and scalability. 🚀",
+  icons:"/icon.png"
 };
 
 export default function RootLayout({
@@ -35,7 +36,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900`}
         >
-          <NextTopLoader color="#74f5a1" showSpinner={false}/>
+          <NextTopLoader color="#222" showSpinner={false}/>
 
           <main>{children}</main>
         </body>
