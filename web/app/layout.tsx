@@ -5,6 +5,8 @@ import {
   ClerkProvider,
 } from "@clerk/nextjs";
 import Header from "@/components/Header";
+import NextTopLoader from 'nextjs-toploader';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +35,8 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-neutral-900`}
         >
-          <Header />
+          <NextTopLoader color="#74f5a1" showSpinner={false}/>
+
           <main>{children}</main>
         </body>
       </html>
