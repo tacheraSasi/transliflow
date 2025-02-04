@@ -6,8 +6,10 @@ import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
-  title: 'Next Shadcn Dashboard Starter',
-  description: 'Basic dashboard with Next.js and Shadcn'
+  title: "Transliflow",
+  description:
+    "AI-powered collaborative translation platform. Seamlessly manage translations, automate workflows, and enhance productivity with real-time collaboration and intelligent suggestions. Built with Go, Next.js, and TypeScript for speed and scalability. 🚀",
+  icons:"/icon.png"
 };
 
 export default async function DashboardLayout({
