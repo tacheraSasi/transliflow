@@ -8,8 +8,10 @@ import NextTopLoader from 'nextjs-toploader';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Next Shadcn',
-  description: 'Basic dashboard with Next.js and Shadcn'
+  title: "Transliflow",
+  description:
+    "AI-powered collaborative translation platform. Seamlessly manage translations, automate workflows, and enhance productivity with real-time collaboration and intelligent suggestions. Built with Go, Next.js, and TypeScript for speed and scalability. 🚀",
+  icons:"/icon.png"
 };
 
 const lato = Lato({
