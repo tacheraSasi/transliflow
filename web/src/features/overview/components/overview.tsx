@@ -136,28 +136,7 @@ export default function OverViewPage() {
                 </CardContent>
               </Card>
             </div>
-            <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7'>
-              <div className='col-span-4'>
-                <BarGraph />
-              </div>
-              <Card className='col-span-4 md:col-span-3'>
-                <CardHeader>
-                  <CardTitle>Recent Sales</CardTitle>
-                  <CardDescription>
-                    You made 265 sales this month.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <RecentSales />
-                </CardContent>
-              </Card>
-              <div className='col-span-4'>
-                <AreaGraph />
-              </div>
-              <div className='col-span-4 md:col-span-3'>
-                <PieGraph />
-              </div>
-            </div>
+            
           </TabsContent>
         </Tabs>
       </div>
