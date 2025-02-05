@@ -18,7 +18,8 @@ import { toast } from 'sonner';
 import * as z from 'zod';
 
 const formSchema = z.object({
-  email: z.string().email({ message: 'Enter a valid email address' })
+  email: z.string().email({ message: 'Enter a valid email address' }),
+  password:z.string()
 });
 
 type UserFormValue = z.infer<typeof formSchema>;
