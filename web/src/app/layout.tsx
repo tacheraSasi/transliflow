@@ -29,7 +29,7 @@ export default async function RootLayout({
   return (
     <html lang='en' className={`${lato.className}`} suppressHydrationWarning>
       <body className={'overflow-hidden bg-gradient-to-b from-neutral-100 to-white dark:from-neutral-900 dark:to-black'}>
-        <NextTopLoader showSpinner={false} />
+        <NextTopLoader showSpinner={false} color='#808080' />
         <NuqsAdapter>
           <Providers session={session}>
             <Toaster />

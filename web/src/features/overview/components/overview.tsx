@@ -13,6 +13,7 @@ import { BarGraph } from './bar-graph';
 import { PieGraph } from './pie-graph';
 import { RecentSales } from './recent-sales';
 import { Metadata } from 'next';
+import { Languages } from 'lucide-react';
 
 export default function OverViewPage() {
   return (
@@ -23,7 +24,7 @@ export default function OverViewPage() {
             Welcome to Transliflow 🌍
           </h2>
           <div className='hidden items-center space-x-2 md:flex'>
-            <Button>Download Report</Button>
+            <Button><Languages />Translate</Button>
           </div>
         </div>
         <Tabs defaultValue='overview' className='space-y-4'>
@@ -139,27 +140,7 @@ export default function OverViewPage() {
                 </CardContent>
               </Card>
             </div>
-            <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-7'>
-              <Card className='col-span-4'>
-                <CardHeader>
-                  <CardTitle>Translation Activity</CardTitle>
-                </CardHeader>
-                <CardContent className='pl-2'>
-                  <AreaGraph />
-                </CardContent>
-              </Card>
-              <Card className='col-span-3'>
-                <CardHeader>
-                  <CardTitle>Recent Translations</CardTitle>
-                  <CardDescription>
-                    Last 10 translations completed.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <RecentSales />
-                </CardContent>
-              </Card>
-            </div>
+
           </TabsContent>
         </Tabs>
       </div>
