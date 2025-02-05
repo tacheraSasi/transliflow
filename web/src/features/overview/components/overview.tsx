@@ -12,6 +12,7 @@ import { AreaGraph } from './area-graph';
 import { BarGraph } from './bar-graph';
 import { PieGraph } from './pie-graph';
 import { RecentSales } from './recent-sales';
+import { Metadata } from 'next';
 
 export default function OverViewPage() {
   return (
@@ -19,10 +20,10 @@ export default function OverViewPage() {
       <div className='flex flex-1 flex-col space-y-2'>
         <div className='flex items-center justify-between space-y-2'>
           <h2 className='text-2xl font-bold tracking-tight'>
-            Hi, Welcome back 👋
+            Welcome to Transliflow 🌍
           </h2>
           <div className='hidden items-center space-x-2 md:flex'>
-            <Button>Download</Button>
+            <Button>Download Report</Button>
           </div>
         </div>
         <Tabs defaultValue='overview' className='space-y-4'>
@@ -37,7 +38,7 @@ export default function OverViewPage() {
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                   <CardTitle className='text-sm font-medium'>
-                    Total Revenue
+                    Translated Words
                   </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -53,16 +54,16 @@ export default function OverViewPage() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>$45,231.89</div>
+                  <div className='text-2xl font-bold'>1,234,567</div>
                   <p className='text-xs text-muted-foreground'>
-                    +20.1% from last month
+                    +15.3% from last month
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                   <CardTitle className='text-sm font-medium'>
-                    Subscriptions
+                    Active Projects
                   </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -80,15 +81,17 @@ export default function OverViewPage() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>+2350</div>
+                  <div className='text-2xl font-bold'>+78</div>
                   <p className='text-xs text-muted-foreground'>
-                    +180.1% from last month
+                    +12.5% from last month
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-                  <CardTitle className='text-sm font-medium'>Sales</CardTitle>
+                  <CardTitle className='text-sm font-medium'>
+                    Languages Supported
+                  </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 24 24'
@@ -104,16 +107,16 @@ export default function OverViewPage() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>+12,234</div>
+                  <div className='text-2xl font-bold'>+50</div>
                   <p className='text-xs text-muted-foreground'>
-                    +19% from last month
+                    +5 new languages added
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                   <CardTitle className='text-sm font-medium'>
-                    Active Now
+                    Active Translators
                   </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -129,14 +132,34 @@ export default function OverViewPage() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>+573</div>
+                  <div className='text-2xl font-bold'>+256</div>
                   <p className='text-xs text-muted-foreground'>
-                    +201 since last hour
+                    +32 since last hour
                   </p>
                 </CardContent>
               </Card>
             </div>
-            
+            <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-7'>
+              <Card className='col-span-4'>
+                <CardHeader>
+                  <CardTitle>Translation Activity</CardTitle>
+                </CardHeader>
+                <CardContent className='pl-2'>
+                  <AreaGraph />
+                </CardContent>
+              </Card>
+              <Card className='col-span-3'>
+                <CardHeader>
+                  <CardTitle>Recent Translations</CardTitle>
+                  <CardDescription>
+                    Last 10 translations completed.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <RecentSales />
+                </CardContent>
+              </Card>
+            </div>
           </TabsContent>
         </Tabs>
       </div>
