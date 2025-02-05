@@ -24,7 +24,10 @@ export default function OverViewPage() {
             Welcome to Transliflow 🌍
           </h2>
           <div className='hidden items-center space-x-2 md:flex'>
-            <Button><Languages />Translate</Button>
+            <Button className='flex items-center gap-2'>
+              <Languages size={20}/>
+              Translate
+            </Button>
           </div>
         </div>
         <Tabs defaultValue='overview' className='space-y-4'>
