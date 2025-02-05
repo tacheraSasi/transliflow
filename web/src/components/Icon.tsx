@@ -14,7 +14,7 @@ export default function Icon() {
             height='28.80'
             rx='1.7280000000000002'
             fill='#c0bfbc'
-            strokewidth='0'
+            strokeWidth='0'
           ></rect>
         </g>
         <g
