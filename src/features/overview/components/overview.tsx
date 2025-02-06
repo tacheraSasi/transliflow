@@ -1,5 +1,4 @@
 import PageContainer from '@/components/layout/page-container';
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -14,6 +13,7 @@ import { PieGraph } from './pie-graph';
 import { RecentSales } from './recent-sales';
 import { Metadata } from 'next';
 import { Languages } from 'lucide-react';
+import { StartTranslation } from '@/components/StartTranslation';
 
 export default function OverViewPage() {
   return (
@@ -24,10 +24,7 @@ export default function OverViewPage() {
             Welcome to Transliflow 🌍
           </h2>
           <div className='hidden items-center space-x-2 md:flex'>
-            <Button className='flex items-center gap-2'>
-              <Languages size={20}/>
-              Translate
-            </Button>
+            <StartTranslation/>
           </div>
         </div>
         <Tabs defaultValue='overview' className='space-y-4'>
