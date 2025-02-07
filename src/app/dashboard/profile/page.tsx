@@ -1,6 +1,6 @@
 import { SearchParams } from 'nuqs/server';
 import ProfileViewPage from '@/features/profile/components/profile-view-page';
-
+export const revalidate = 0;
 type pageProps = {
   searchParams: Promise<SearchParams>;
 };
