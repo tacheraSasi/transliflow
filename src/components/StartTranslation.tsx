@@ -74,12 +74,12 @@ export function StartTranslation() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value='en'>English</SelectItem>
-                  <SelectItem value='es'>Spanish</SelectItem>
-                  <SelectItem value='fr'>French</SelectItem>
-                  <SelectItem value='de'>German</SelectItem>
-                  <SelectItem value='zh'>Chinese</SelectItem>
-                  <SelectItem value='sw'>Swahili</SelectItem>
+                  <SelectItem value='English'>English</SelectItem>
+                  <SelectItem value='Spanish'>Spanish</SelectItem>
+                  <SelectItem value='French'>French</SelectItem>
+                  <SelectItem value='German'>German</SelectItem>
+                  <SelectItem value='Chinese'>Chinese</SelectItem>
+                  <SelectItem value='Swahili'>Swahili</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -94,12 +94,12 @@ export function StartTranslation() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value='en'>English</SelectItem>
-                  <SelectItem value='es'>Spanish</SelectItem>
-                  <SelectItem value='fr'>French</SelectItem>
-                  <SelectItem value='de'>German</SelectItem>
-                  <SelectItem value='zh'>Chinese</SelectItem>
-                  <SelectItem value='sw'>Swahili</SelectItem>
+                  <SelectItem value='English'>English</SelectItem>
+                  <SelectItem value='Spanish'>Spanish</SelectItem>
+                  <SelectItem value='French'>French</SelectItem>
+                  <SelectItem value='German'>German</SelectItem>
+                  <SelectItem value='Chinese'>Chinese</SelectItem>
+                  <SelectItem value='Swahili'>Swahili</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>

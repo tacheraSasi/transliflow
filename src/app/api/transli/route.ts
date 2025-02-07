@@ -20,15 +20,15 @@ export async function POST(req: NextRequest) {
         messages: [
           {
             role: "system",
-            content: `You are a helpful assistant that translates text from ${from} to ${to}. 
-            !IMPORTANT only return back the translated text and nothing more.
-            `
+            content: `You are a professional translation assistant specializing in accurate and context-aware translations from ${from} to ${to}.
+            Your responses must contain only the translated text without any additional commentary, explanations, or formatting.`
           },
           {
             role: "user",
-            content: `Translate the following text: "${text}"`
+            content: `Please translate the following text from ${from} to ${to}: "${text}"`
           }
         ]
+
       })
     });
 

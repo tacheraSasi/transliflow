@@ -20,7 +20,7 @@ export default function Page() {
   const handleTranslate = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/translate", {
+      const response = await fetch("/api/transli", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export default function Page() {
               rows={18}
               className="h-full w-full"
               placeholder="Translated output will appear here..."
-              readOnly
+              
             />
           </div>
         </div>
