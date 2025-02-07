@@ -7,11 +7,11 @@ export default function Page() {
       <div className='flex w-full gap-2'>
         <div className='h-full w-full flex-1'>
           <p>Original</p>
-          <Textarea className='h-full w-full' />
+          <Textarea rows={18} className='h-full w-full' placeholder='Paste the original text here...' />
         </div>
         <div className='h-full w-full flex-1'>
           <p>Translated</p>
-          <Textarea className='h-full w-full' />
+          <Textarea rows={18} className='h-full w-full' placeholder='Translated output will appear hear...' />
         </div>
       </div>
     </PageContainer>

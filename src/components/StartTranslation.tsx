@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -13,15 +15,25 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Languages } from 'lucide-react';
+import { useState } from "react";
+import { useRouter } from 'next/router';
 
 export function StartTranslation() {
+  const [title, setTitle] = useState('');
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push(`/dashboard/translate?title=${title}&from=${from}&to=${to}`);
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -40,22 +52,27 @@ export function StartTranslation() {
         </DialogHeader>
         <div className='grid gap-4 py-4'>
           <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='lang-from' className='text-right'>
+            <Label htmlFor='title' className='text-right'>
               Title
             </Label>
-            <Input className='w-[180px]' placeholder='Title here' name="title"/>
+            <Input
+              className='w-[180px]'
+              placeholder='Title here'
+              name="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </div>
           <div className='grid grid-cols-4 items-center gap-4'>
             <Label htmlFor='lang-from' className='text-right'>
               From
             </Label>
-            <Select>
+            <Select value={from} onValueChange={setFrom}>
               <SelectTrigger className='w-[180px]'>
                 <SelectValue placeholder='Choose the language' />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {/* <SelectLabel>English</SelectLabel> */}
                   <SelectItem value='en'>English</SelectItem>
                   <SelectItem value='es'>Spanish</SelectItem>
                   <SelectItem value='fr'>French</SelectItem>
@@ -70,13 +87,12 @@ export function StartTranslation() {
             <Label htmlFor='lang-to' className='text-right'>
               To
             </Label>
-            <Select>
+            <Select value={to} onValueChange={setTo}>
               <SelectTrigger className='w-[180px]'>
                 <SelectValue placeholder='Choose the language' />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {/* <SelectLabel>English</SelectLabel> */}
                   <SelectItem value='en'>English</SelectItem>
                   <SelectItem value='es'>Spanish</SelectItem>
                   <SelectItem value='fr'>French</SelectItem>
@@ -87,20 +103,9 @@ export function StartTranslation() {
               </SelectContent>
             </Select>
           </div>
-          {/* <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='file' className='text-right'>
-              File
-            </Label>
-            <Input
-              id='file'
-              type='file'
-              className='col-span-3'
-              accept='.docx,.xlsx,.pptx,.pdf,.txt'
-            />
-          </div> */}
         </div>
         <DialogFooter>
-          <Button type='submit' className='w-full'>
+          <Button type='button' className='w-full' onClick={handleStart}>
             Start Translation
           </Button>
         </DialogFooter>
