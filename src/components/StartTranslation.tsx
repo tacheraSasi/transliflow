@@ -1,6 +1,9 @@
 "use client";
 
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Languages } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,105 +11,96 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogFooter
-} from '@/components/ui/dialog';
+  DialogFooter,
+} from "@/components/ui/dialog";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectTrigger,
-  SelectValue
-} from '@/components/ui/select';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Languages } from 'lucide-react';
-import { useState } from "react";
-import { useRouter } from 'next/navigation';
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+const languageOptions = ["English", "Spanish", "French", "German", "Chinese", "Swahili"];
 
 export function StartTranslation() {
-  const [title, setTitle] = useState('');
-  const [from, setFrom] = useState('');
-  const [to, setTo] = useState('');
-  
+  const [title, setTitle] = useState("");
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+
   const router = useRouter();
 
   const handleStart = () => {
-    router.push(`/dashboard/translate?title=${title}&from=${from}&to=${to}`);
+    if (title && from && to) {
+      router.push(`/dashboard/translate?title=${title}&from=${from}&to=${to}`);
+    }
   };
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className='flex items-center gap-2'>
+        <Button className="flex items-center gap-2">
           <Languages size={20} />
           Translate
         </Button>
       </DialogTrigger>
-      <DialogContent className='sm:max-w-[425px]'>
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Start New Translation</DialogTitle>
           <DialogDescription>
-            Select source and target languages, then upload the file you want to
-            translate.
+            Select source and target languages, then upload the file you want to translate.
           </DialogDescription>
         </DialogHeader>
-        <div className='grid gap-4 py-4'>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='title' className='text-right'>
-              Title
-            </Label>
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="title">Title</Label>
             <Input
-              className='w-[180px]'
-              placeholder='Title here'
-              name="title"
+              id="title"
+              placeholder="Enter title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='lang-from' className='text-right'>
-              From
-            </Label>
+          <div className="space-y-2">
+            <Label htmlFor="lang-from">From</Label>
             <Select value={from} onValueChange={setFrom}>
-              <SelectTrigger className='w-[180px]'>
-                <SelectValue placeholder='Choose the language' />
+              <SelectTrigger>
+                <SelectValue placeholder="Choose the language" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value='English'>English</SelectItem>
-                  <SelectItem value='Spanish'>Spanish</SelectItem>
-                  <SelectItem value='French'>French</SelectItem>
-                  <SelectItem value='German'>German</SelectItem>
-                  <SelectItem value='Chinese'>Chinese</SelectItem>
-                  <SelectItem value='Swahili'>Swahili</SelectItem>
+                  {languageOptions.map((lang) => (
+                    <SelectItem key={lang} value={lang}>
+                      {lang}
+                    </SelectItem>
+                  ))}
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='lang-to' className='text-right'>
-              To
-            </Label>
+          <div className="space-y-2">
+            <Label htmlFor="lang-to">To</Label>
             <Select value={to} onValueChange={setTo}>
-              <SelectTrigger className='w-[180px]'>
-                <SelectValue placeholder='Choose the language' />
+              <SelectTrigger>
+                <SelectValue placeholder="Choose the language" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value='English'>English</SelectItem>
-                  <SelectItem value='Spanish'>Spanish</SelectItem>
-                  <SelectItem value='French'>French</SelectItem>
-                  <SelectItem value='German'>German</SelectItem>
-                  <SelectItem value='Chinese'>Chinese</SelectItem>
-                  <SelectItem value='Swahili'>Swahili</SelectItem>
+                  {languageOptions.map((lang) => (
+                    <SelectItem key={lang} value={lang}>
+                      {lang}
+                    </SelectItem>
+                  ))}
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
         </div>
         <DialogFooter>
-          <Button type='button' className='w-full' onClick={handleStart}>
+          <Button type="button" className="w-full" onClick={handleStart} disabled={!title || !from || !to}>
             Start Translation
           </Button>
         </DialogFooter>
