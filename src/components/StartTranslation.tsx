@@ -43,7 +43,7 @@ export function StartTranslation() {
             <Label htmlFor='lang-from' className='text-right'>
               Title
             </Label>
-            <Input className='w-full' placeholder='Title here' name="title"/>
+            <Input className='w-[180px]' placeholder='Title here' name="title"/>
           </div>
           <div className='grid grid-cols-4 items-center gap-4'>
             <Label htmlFor='lang-from' className='text-right'>
@@ -55,7 +55,7 @@ export function StartTranslation() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>English</SelectLabel>
+                  {/* <SelectLabel>English</SelectLabel> */}
                   <SelectItem value='en'>English</SelectItem>
                   <SelectItem value='es'>Spanish</SelectItem>
                   <SelectItem value='fr'>French</SelectItem>
@@ -76,7 +76,7 @@ export function StartTranslation() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>English</SelectLabel>
+                  {/* <SelectLabel>English</SelectLabel> */}
                   <SelectItem value='en'>English</SelectItem>
                   <SelectItem value='es'>Spanish</SelectItem>
                   <SelectItem value='fr'>French</SelectItem>

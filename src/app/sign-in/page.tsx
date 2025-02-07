@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SignInViewPage from '@/features/auth/components/sigin-view';
 
 export const metadata: Metadata = {
-  title: 'Trasliflow | Sign In',
+  title: 'Transliflow | Sign In',
   description: 'Sign In to Transliflow'
 };
 
