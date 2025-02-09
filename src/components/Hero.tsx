@@ -89,14 +89,14 @@ export default function Hero() {
             </Link>
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
             className="mt-16 text-sm text-neutral-600 dark:text-neutral-400 font-light"
           >
             Built with Go, Next.js, and TypeScript for unparalleled speed and scalability
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </div>
