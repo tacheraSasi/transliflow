@@ -7,12 +7,6 @@ import {
   CardTitle
 } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AreaGraph } from './area-graph';
-import { BarGraph } from './bar-graph';
-import { PieGraph } from './pie-graph';
-import { RecentSales } from './recent-sales';
-import { Metadata } from 'next';
-import { Languages } from 'lucide-react';
 import { StartTranslation } from '@/components/StartTranslation';
 
 export default function OverViewPage() {
