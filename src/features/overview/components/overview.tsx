@@ -23,7 +23,7 @@ export default function OverViewPage() {
           <h2 className='text-2xl font-bold tracking-tight'>
             Welcome to Transliflow 🌍
           </h2>
-          <div className='hidden items-center space-x-2 md:flex'>
+          <div className='items-center space-x-2 md:flex'>
             <StartTranslation/>
           </div>
         </div>
